@@ -1,0 +1,23 @@
+<h2>Users</h2>
+<table>
+  <thead>
+    <th>image</th>
+    <th>name</th>
+    <th colspan="3"></th>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <td>
+          <%= attachment_image_tag user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg %>
+      </td>
+      <td>
+        <%= user.name %>
+      </td>
+      <td>
+        <%= link_to "show", user_books_path %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
